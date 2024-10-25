@@ -1,0 +1,7 @@
+gfortran -fno-range-check -c paramod.f90
+gfortran -fno-range-check -c interface.f90
+./f92 gendet-amlt
+./f92 matpppinit 
+./f92 makeinit
+./f6  # diagonly
+./f7  # lanc_dsf (for Dynamical Structure Factor)

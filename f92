@@ -1,0 +1,2 @@
+#ifort -shared-intel -mcmodel=large $1.f -o $1-test-mcmodel -mkl
+gfortran -fcheck=bounds -mcmodel=large $1.f90 -o $1.x

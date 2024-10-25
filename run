@@ -1,0 +1,12 @@
+rm *.dat
+rm *.out
+
+#-- RUN the code ---------------
+
+./gendet-amlt.x    # generate basis
+./matpppinit.x     # make the Hamiltonian Matrix
+./makeinit.x       # create initial state vector for the Lanczos algorithm
+./diagonly.x       # diagonzalize and calculate expectation values
+#./lanc_dsf.x      # diagonzalize and then calculate the dynamical structure factor
+
+#----------------------------------------
