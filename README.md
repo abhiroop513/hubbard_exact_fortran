@@ -47,7 +47,15 @@ The lanc_dsf.f90 file performs continued fractions in the Lanczos method to comp
 <!--. Setting Parameters
 The paramod.f90 file allows you to set the physical parameters (e.g., interaction strength, lattice size) for the model. Modify this file before running the simulations. -->
 
-Parameters
+## Parameters to put the input file `initial.inp`
+
+norb,nlctrns,amltplt,min,max,field,ipot
+accuracy,nbonds,nchrg,vrp
+(trnsfr(i),i=1,nbonds)     !! hopping matrices
+(ibond(1,i),ibond(2,i),i=1,nbonds)  !! Bonds between site indices
+(hubard_U(i),i=1,norb)
+(onsite_energies(i),i=1,norb)
+ (nzocc(i),i=1,norb)
 Lattice size: Set in paramod.f90
 Interaction strength (U): Set in paramod.f90
 Particle number: Defined in gendet.f90
