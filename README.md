@@ -13,6 +13,7 @@ This package implements Exact Diagonalization (ED) for the Fermionic Hubbard Mod
 - **paramod.f90**: Defines the variables and parameters used in the simulation.
 - **interface.f90**: Contains Fortran interfaces for necessary variables and functions.
 - **compile**: Shell script to compile all the Fortran90 files.
+- **run**: Shell script to run the executables
 - **initial.inp**: input file for the parameters
 
 
@@ -31,17 +32,16 @@ This package implements Exact Diagonalization (ED) for the Fermionic Hubbard Mod
 
 ## Usage
 
-1. Input file: 
-2. Generating the Basis Set
+1. Generating the Basis Set
 Run gendet.f90 to generate the basis set for the Fermionic Hubbard Model conserving the particle number and spin.
 
-3. Constructing the Hamiltonian Matrix
+2. Constructing the Hamiltonian Matrix
 Use matppp.f90 to build the Hamiltonian matrix in sparse (CSR) format. This matrix will be used in the diagonalization steps to find the ground state energy and compute observables.(It was Originally designed for the creating the Hamiltonian matrix of the Pariser-Parr-Pople modelm that's why 'matppp')
 
-4. Performing Lanczos Diagonalization
+3. Performing Lanczos Diagonalization
 The Lanczos method is implemented in diagonly.f90. Running this code will compute the ground state energy and observables like spin expectation values per site and spin-spin correlations.
 
-5. Computing the Dynamical Structure Factor
+4. Computing the Dynamical Structure Factor
 The lanc_dsf.f90 file performs continued fractions in the Lanczos method to compute the dynamical structure factor. This can be used to explore the frequency-dependent properties of the system.
 
 <!--. Setting Parameters
