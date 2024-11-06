@@ -51,8 +51,8 @@ The paramod.f90 file allows you to set the physical parameters (e.g., interactio
 
 norb,nlctrns,amltplt,min,max,field,ipot  
 accuracy,nbonds,nchrg,vrp  
-(trnsfr(i),i=1,nbonds)     !! hopping matrices  
-(ibond(1,i),ibond(2,i),i=1,nbonds)  !! Bonds between site indices  
+(trnsfr(i),i=1,nbonds)          # hopping matrices  
+(ibond(1,i),ibond(2,i),i=1,nbonds)     # Bonds between site indices  
 (hubard_U(i),i=1,norb)  
 (onsite_energies(i),i=1,norb)  
  (nzocc(i),i=1,norb)  
