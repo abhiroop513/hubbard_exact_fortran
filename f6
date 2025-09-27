@@ -1,1 +1,0 @@
-gfortran -fcheck=bounds -mcmodel=large diagonly.f90 -L/home/abhiroop/hubbard_package -llapack -L/home/abhiroop/hubbard_package -lrefblas -o diagonly.x

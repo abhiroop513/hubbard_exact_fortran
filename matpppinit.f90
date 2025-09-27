@@ -40,7 +40,7 @@
   55  format(1x,a8)
 
       read(1,*) norb,nlctrns,amltplt,min,max,field,ipot
-      read(1,*) accu,nbonds,nchrg,vrp
+      read(1,*) accu,nbonds,vrp
       read(1,*) (trnsfr(i),i=1,nbonds)
       read(1,*) (ibond(1,i),ibond(2,i),i=1,nbonds)
       read(1,*) (uhub(i),i=1,norb)

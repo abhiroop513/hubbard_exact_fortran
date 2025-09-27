@@ -1,0 +1,36 @@
+6  6  0.0  
+1.0d-10  6  0.0      
+-1.00 -1.00 -1.00 -1.00  -1.00  -1.00
+1 2  2 3  3 4  4 5  5 6  6 1  
+5.0  5.0  5.0  5.0  5.0  5.0 
+-4.0  -4.0  -4.0  -4.0  -4.0
+ 1    1    1    1    1    1    1    1    1   1   1   1   1   1    1    1
+0.00  0.00  0.00  0.00  0.00  0.00
+0.00  0.00  0.00  0.00  0.00  0.00
+
+## COPY THIS FILE INTO THE PARENT DIRECTORY ##
+###  Inputs  :---------------- 
+Line-1:         norb,nlctrns,amltplt
+Line-2:         accu,nbonds,vrp
+Line-3:         (trnsfr(i),i=1,nbonds)
+Line-4:        (ibond(1,i),ibond(2,i),i=1,nbonds)
+Line-5:        (uhub(i),i=1,norb)
+Line-6:         (esite(i),i=1,norb)
+Line-7:         (nzocc(i),i=1,norb)
+Line-8:         (vatt(i),i=1,norb-1)
+Line-9:         (amg(i),i=1,norb)
+
+
+norb: number of orbitals (or number of sites)
+nlctrns: number of electrons
+amltplt: total spin multiplicity (for spin conserved) calculation
+accu: accuracy
+nbonds: number of bonds
+vrp: dipole interaction strength
+trnsfr: hopping strength (also termed as transfer or overlap integral)
+ibond:  the 'bonds', i.e. the pairs of site indices between  which the hopping occurs
+ubub(i): hubbard interaction strength for each site i
+esite: on-site energy or chemical potential
+nzocc(=1) : integer filling used in case the V-term is written as Σ V_ij(n_i - 1)(n_j - 1)[[NOT USED IN CODE]]
+vatt: nearest neighbour Coulomb interaction  in case of Extended Hubbard Model
+amg: magnetic field strength interacting with Sz (z-component of spin)

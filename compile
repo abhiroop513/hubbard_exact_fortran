@@ -1,7 +1,24 @@
-gfortran -fno-range-check -c paramod.f90
-gfortran -fno-range-check -c interface.f90
-./f92 gendet-amlt
-./f92 matpppinit 
-./f92 makeinit
-./f6  # diagonly
-./f7  # lanc_dsf (for Dynamical Structure Factor)
+#!/bin/bash
+
+# Detect OS
+OS=$(uname)
+
+# Compiler flags
+COMMON_FLAGS="-fcheck=bounds"
+NO_RANGE_FLAGS="-fno-range-check"
+LIB_FLAGS="-llapack -lblas"
+
+# Add -mcmodel=large only if Linux
+if [ "$OS" = "Linux" ]; then
+    COMMON_FLAGS="$COMMON_FLAGS -mcmodel=large"
+fi
+
+# Compilation commands
+gfortran $NO_RANGE_FLAGS -c paramod.f90
+gfortran $NO_RANGE_FLAGS -c interface.f90
+gfortran $COMMON_FLAGS gendet-amlt.f90 -o gendet-amlt.x
+gfortran $COMMON_FLAGS matpppinit.f90 -o matpppinit.x
+gfortran $COMMON_FLAGS makeinit.f90 -o makeinit.x
+gfortran $COMMON_FLAGS diagonly.f90 $LIB_FLAGS -o diagonly.x
+gfortran $COMMON_FLAGS lanc_dsf.f90 $LIB_FLAGS -o lanc_dsf.x
+
